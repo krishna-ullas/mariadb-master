@@ -1,7 +1,7 @@
 app:
     name: mariadb Master
     code: mariadbmaster
-    notify: appzdev@cloudbourne.co
+    notify: kullas@ecloudcontrol.com
 
 build:
     version: 10.4
@@ -11,7 +11,7 @@ build:
     image_template: mariadb_master-10.4
 
 deploy:
-    context: alpha/DEV
+    context: krishna-ullas/DEV
     type: statefulset
     replicas: 1
     port:
@@ -21,11 +21,11 @@ volumes:
   - claim: mariadb-master-data
     mount: /appz/data
     name: data
-    size: 5Gi
+    size: 2Gi
   - claim: mariadb-master-backup
     mount: /appz/backup
     name: backup
-    size: 5Gi
+    size: 2Gi
   
 properties:
     MYSQL_REPLICATION_USER: replication
